@@ -41,45 +41,103 @@ class M_warga extends CI_Model
     }
     function jumlah_warga()
     {
+      $cek_akses = $this->session->userdata('hak_akses');
+      if ($cek_akses == 'lurah') {
         $this->db->select('count(tbl_warga.id_warga) as jumlah');
+        $this->db->where('status','1');
         $hsl = $this->db->get('tbl_warga');
         return $hsl;
-    }
-    function jumlah_ktp()
-    {
-        $this->db->select('count(tbl_ktp.id_ktp) as jumlah');
-        $hsl = $this->db->get('tbl_ktp');
-        return $hsl;
-    }
-    function jumlah_kelahiran()
-    {
-        $this->db->select('count(tbl_surat_kelahiran.id_surat_kelahiran) as jumlah');
-        $hsl = $this->db->get('tbl_surat_kelahiran');
-        return $hsl;
-    }
-    function jumlah_kematian()
-    {
-        $this->db->select('count(tbl_surat_kematian.id_surat_kematian) as jumlah');
-        $hsl = $this->db->get('tbl_surat_kematian');
-        return $hsl;
-    }
-    function jumlah_pendatang()
-    {
-      $this->db->select('count(tbl_surat_datang.id_surat_datang) as jumlah');
-      $hsl = $this->db->get('tbl_surat_datang');
-      return $hsl;   
+    }else{
+      $this->db->select('count(tbl_warga.id_warga) as jumlah');
+      $hsl = $this->db->get('tbl_warga');
+      return $hsl;
   }
-  function jumlah_pindah()
-  {
+
+}
+function jumlah_ktp()
+{
+  $cek_akses = $this->session->userdata('hak_akses');
+  if ($cek_akses == 'lurah') {
+    $this->db->select('count(tbl_ktp.id_ktp) as jumlah');
+    $this->db->where('status','1');
+    $hsl = $this->db->get('tbl_ktp');
+    return $hsl;
+}else{
+    $this->db->select('count(tbl_ktp.id_ktp) as jumlah');
+    $hsl = $this->db->get('tbl_ktp');
+    return $hsl;
+}
+
+}
+function jumlah_kelahiran()
+{
+    $cek_akses = $this->session->userdata('hak_akses');
+    if ($cek_akses == 'lurah') {
+       $this->db->select('count(tbl_surat_kelahiran.id_surat_kelahiran) as jumlah');
+       $this->db->where('status','1');
+       $hsl = $this->db->get('tbl_surat_kelahiran');
+       return $hsl;
+   }else{
+       $this->db->select('count(tbl_surat_kelahiran.id_surat_kelahiran) as jumlah');
+       $hsl = $this->db->get('tbl_surat_kelahiran');
+       return $hsl;
+   }
+
+}
+function jumlah_kematian()
+{
+
+    $cek_akses = $this->session->userdata('hak_akses');
+    if ($cek_akses == 'lurah') {
+       $this->db->select('count(tbl_surat_kematian.id_surat_kematian) as jumlah');
+       $this->db->where('status','1');
+       $hsl = $this->db->get('tbl_surat_kematian');
+       return $hsl;
+   }else{
+
+     $this->db->select('count(tbl_surat_kematian.id_surat_kematian) as jumlah');
+     $hsl = $this->db->get('tbl_surat_kematian');
+     return $hsl;
+ }
+
+}
+function jumlah_pendatang()
+{
+
+    $cek_akses = $this->session->userdata('hak_akses');
+    if ($cek_akses == 'lurah') {
+       $this->db->select('count(tbl_surat_datang.id_surat_datang) as jumlah');
+       $this->db->where('status','1');
+       $hsl = $this->db->get('tbl_surat_datang');
+       return $hsl;  
+   }else{
+     $this->db->select('count(tbl_surat_datang.id_surat_datang) as jumlah');
+     $hsl = $this->db->get('tbl_surat_datang');
+     return $hsl;  
+ }
+
+
+}
+function jumlah_pindah()
+{
+
+    $cek_akses = $this->session->userdata('hak_akses');
+    if ($cek_akses == 'lurah') {
+       $this->db->select('count(tbl_surat_pindah.id_surat_pindah) as jumlah');
+       $this->db->where('status','1');
+       $hsl = $this->db->get('tbl_surat_pindah');
+       return $hsl;   
+   }else{
     $this->db->select('count(tbl_surat_pindah.id_surat_pindah) as jumlah');
     $hsl = $this->db->get('tbl_surat_pindah');
     return $hsl;   
 }
-
+}
 
 function tampil_data_limit()
 {
     $this->db->limit('5');
+    $this->db->where('status','1');
     return $this->db->get('tbl_warga');
 }
 

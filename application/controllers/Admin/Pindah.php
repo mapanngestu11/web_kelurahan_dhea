@@ -334,7 +334,45 @@ public function add()
                 $cek_status = 'Sudah Disetujui oleh Lurah';
             }
 
+            if ($cek_status == '3') {
+                $mail->isSMTP();      
 
+            $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+            $mail->Username   = 'Dheakajbs1@gmail.com';   
+            $mail->Password   = 'spputfauyrdqlfdf';                  // SMTP username
+            
+            // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->Port       = 587;                                    // TCP port to connect to, use 465 for 
+            $mail->setFrom('Dheakajbs1@gmail.com');
+            $mail->addAddress($email, $nama_pengirim);     // Add a recipient
+
+            $mail->addReplyTo('Dheakajbs1@gmail.com');
+
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'Informasi Permohonan KTP Kelurahan Karang Timur';
+            $mail->Body    = '
+            <H1>Notifikasi Kelurahan Karang Timur</h1>
+            <br>
+            <p>Salam Sejahtera,</p>
+            <h3>Terima Kasih, <strong>'.$nama.'</strong></h3> <p> sudah melakukan <strong>Permohonan Surat Pindah</strong>.</p><p> Permohonan Surat Pindah dengan nomor : <strong>' .$kode_permohonan. ' </strong>, Saat ini : <strong> '.$cek_status.' </strong> , Mohon untuk datang Ke Kelurahan Karang Timur Setelah 2 -3 Hari Setelah Menerima email ini.<br>Keterangan lebih lanjut sebagai berikut : ' .$pesan. '</p> 
+            <br>
+            <p>Terimakasih atas perhatiannya</p>
+            <p>Hormat Kami</p>
+            <br><p>Kelurahan Karang Timur</p>
+
+            <br>
+            <small>Email ini dikirimkan otomatis. Mohon jangan membalas email ini.</small>
+
+            ';
+
+            if ($mail->send()) {
+             // echo $this->session->set_flashdata('msg', 'success');
+             // redirect('Admin/Ktp');
+            } else {
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            }
+        }else{
 
             $mail->isSMTP();      
 
@@ -372,9 +410,11 @@ public function add()
             } else {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
-            echo $this->session->set_flashdata('msg', 'success_update');
-            redirect('Admin/Pindah');
         }
 
+        echo $this->session->set_flashdata('msg', 'success_update');
+        redirect('Admin/Pindah');
     }
+
+}
 }

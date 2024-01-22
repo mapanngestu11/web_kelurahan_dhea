@@ -70,9 +70,9 @@ class Kematian  extends CI_Controller
             $mail->Body    = '<h1>Halo,' .$nama. '.</h1> <p> Permohonan Surat kamu dengan nomor : <strong>' .$kode_permohonan. ' </strong>, Sudah selesai anda bisa langsung untuk mengambilnya di Kelurahan Karang Timur. Note Pesan : ' .$pesan. '</p> ';
 
             if ($mail->send()) {
-             echo $this->session->set_flashdata('msg', 'success');
-             redirect('Admin/Kematian');
-         } else {
+               echo $this->session->set_flashdata('msg', 'success');
+               redirect('Admin/Kematian');
+           } else {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
 
@@ -87,20 +87,20 @@ class Kematian  extends CI_Controller
 
     public function cetak_laporan_kematian ()
     {
-       $tanggal = $this->input->post('tanggal');
-       $bulan = date('m', strtotime($tanggal));
-       $cek_bulan = date('F', strtotime($tanggal));
+     $tanggal = $this->input->post('tanggal');
+     $bulan = date('m', strtotime($tanggal));
+     $cek_bulan = date('F', strtotime($tanggal));
 
-       $data['keterangan'] = 'Permohonan Pembuatan Surat Kematian';
-       $data['laporan'] = $this->M_kematian->cetak_laporan($bulan);
-       $jumlah = $this->M_kematian->cetak_laporan_jumlah ($bulan);
-       $setuju = $this->M_kematian->cetak_laporan_setuju ($bulan);
-       $proses = $this->M_kematian->cetak_laporan_proses ($bulan);
-       $tolak = $this->M_kematian->cetak_laporan_tolak ($bulan);
+     $data['keterangan'] = 'Permohonan Pembuatan Surat Kematian';
+     $data['laporan'] = $this->M_kematian->cetak_laporan($bulan);
+     $jumlah = $this->M_kematian->cetak_laporan_jumlah ($bulan);
+     $setuju = $this->M_kematian->cetak_laporan_setuju ($bulan);
+     $proses = $this->M_kematian->cetak_laporan_proses ($bulan);
+     $tolak = $this->M_kematian->cetak_laporan_tolak ($bulan);
 
 
 
-       $data['informasi'] = array( 
+     $data['informasi'] = array( 
         'bulan' => $cek_bulan,
         'jumlah' => $jumlah,
         'setuju' => $setuju,
@@ -108,12 +108,12 @@ class Kematian  extends CI_Controller
         'tolak' => $tolak,
 
     );
-       $this->load->view('Admin/Cetak_laporan_kematian.php',$data);
+     $this->load->view('Admin/Cetak_laporan_kematian.php',$data);
 
-   }
+ }
 
-   public function cek_warga()
-   {
+ public function cek_warga()
+ {
     $data = (object)array();
     $nik = $this->input->post('input_check_nik');
         // $nis = '2022001';
@@ -182,14 +182,14 @@ public function add()
 
 
                 $data = array(
-                   'kode_permohonan' => $kode_permohonan,
-                   'nik' => $nik,
-                   'kebutuhan' => $kebutuhan,
-                   'status' => $status,
-                   'file_pemohon' => $file,
-                   'nama_user' => $nama_user,
-                   'tanggal' => $tanggal
-               );
+                 'kode_permohonan' => $kode_permohonan,
+                 'nik' => $nik,
+                 'kebutuhan' => $kebutuhan,
+                 'status' => $status,
+                 'file_pemohon' => $file,
+                 'nama_user' => $nama_user,
+                 'tanggal' => $tanggal
+             );
 
                 $this->M_kematian->input_data($data, 'tbl_surat_kematian');
                 echo $this->session->set_flashdata('msg', 'success');
@@ -355,8 +355,47 @@ public function add()
                 $cek_status = 'Sudah Disetujui oleh Lurah';
             }
 
+            if ($cek_status == '3') {
 
+               $mail->isSMTP();      
 
+            $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+            $mail->Username   = 'Dheakajbs1@gmail.com';   
+            $mail->Password   = 'spputfauyrdqlfdf';                  // SMTP username
+            
+            // $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+            $mail->Port       = 587;                                    // TCP port to connect to, use 465 for 
+            $mail->setFrom('Dheakajbs1@gmail.com');
+            $mail->addAddress($email, $nama_pengirim);     // Add a recipient
+
+            $mail->addReplyTo('Dheakajbs1@gmail.com');
+
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'Informasi Permohonan KTP Kelurahan Karang Timur';
+            $mail->Body    = '
+            <H1>Notifikasi Kelurahan Karang Timur</h1>
+            <br>
+            <p>Salam Sejahtera,</p>
+            <h3>Terima Kasih, <strong>'.$nama.'</strong></h3> <p> sudah melakukan <strong>Permohonan Surat Kematian</strong>.</p><p> Permohonan Surat Kematian dengan nomor : <strong>' .$kode_permohonan. ' </strong>, Saat ini : <strong> '.$cek_status.' </strong> , Mohon untuk datang Ke Kelurahan Karang Timur Setelah 2 -3 Hari Setelah Menerima email ini.<br>Keterangan lebih lanjut sebagai berikut : ' .$pesan. '</p> 
+            <br>
+            <p>Terimakasih atas perhatiannya</p>
+            <p>Hormat Kami</p>
+            <br><p>Kelurahan Karang Timur</p>
+
+            <br>
+            <small>Email ini dikirimkan otomatis. Mohon jangan membalas email ini.</small>
+
+            ';
+
+            if ($mail->send()) {
+             // echo $this->session->set_flashdata('msg', 'success');
+             // redirect('Admin/Ktp');
+            } else {
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            }
+
+        }else{
             $mail->isSMTP();      
 
             $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
@@ -393,10 +432,13 @@ public function add()
             } else {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
-
-            echo $this->session->set_flashdata('msg', 'success_update');
-            redirect('Admin/Kematian');
         }
 
+
+
+        echo $this->session->set_flashdata('msg', 'success_update');
+        redirect('Admin/Kematian');
     }
+
+}
 }

@@ -117,9 +117,18 @@ function cek_kodepermohonan_kematian($kode_permohonan)
 }
 function jumlah_data()
 {
-  $this->db->select('count(tbl_surat_kelahiran.id_surat_kelahiran) as jumlah');
-  $hsl = $this->db->get('tbl_surat_kelahiran');
-  return $hsl;
+ $cek_akses = $this->session->userdata('hak_akses');
+ if ($cek_akses == 'lurah') {
+   $this->db->select('count(tbl_surat_kelahiran.id_surat_kelahiran) as jumlah');
+   $this->db->where('status','1');
+   $hsl = $this->db->get('tbl_surat_kelahiran');
+   return $hsl;
+ }else{
+   $this->db->select('count(tbl_surat_kelahiran.id_surat_kelahiran) as jumlah');
+   $hsl = $this->db->get('tbl_surat_kelahiran');
+   return $hsl;
+ }
+
 }
 function cek_kode_permohonan($kode_permohonan)
 {
