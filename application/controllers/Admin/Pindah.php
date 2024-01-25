@@ -355,7 +355,7 @@ public function add()
             <H1>Notifikasi Kelurahan Karang Timur</h1>
             <br>
             <p>Salam Sejahtera,</p>
-            <h3>Terima Kasih, <strong>'.$nama.'</strong></h3> <p> sudah melakukan <strong>Permohonan Surat Pindah</strong>.</p><p> Permohonan Surat Pindah dengan nomor : <strong>' .$kode_permohonan. ' </strong>, Saat ini : <strong> '.$cek_status.' </strong> , Mohon untuk datang Ke Kelurahan Karang Timur Setelah 2 -3 Hari Setelah Menerima email ini.<br>Keterangan lebih lanjut sebagai berikut : ' .$pesan. '</p> 
+            <h3>Terima Kasih, <strong>'.$nama.'</strong></h3> <p> sudah melakukan <strong>Permohonan Surat Pindah</strong>.</p><p> Permohonan Surat Pindah dengan nomor : <strong>' .$kode_permohonan. ' </strong>, Saat ini : <strong> '.$cek_status.' </strong> , Mohon untuk datang Ke Kelurahan Karang Timur Setelah 2 -3 Hari Setelah Menerima email ini untuk mengambil dokumen tersebut. </p> 
             <br>
             <p>Terimakasih atas perhatiannya</p>
             <p>Hormat Kami</p>

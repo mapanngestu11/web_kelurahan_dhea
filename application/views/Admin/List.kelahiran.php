@@ -337,226 +337,222 @@
                         <div class="col-md-6">
                           <label>Jenis Kelamin</label>
                           <div class="form-group form-input">
-                            <select class="form-control" name="jenis_kelamin" readonly>
-                              <option value="<?php echo $jenis_kelamin;?>"> <?php echo $jenis_kelamin;?></option>
-                              <option value="Laki-Laki">Laki-Laki</option>
-                              <option value="Perempuan">Perempuan</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>Tempat Lahir</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="tempat_lahir_anak" value="<?php echo $row['tempat_lahir_anak']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label>Tanggal Lahir</label>
-                          <div class="form-group form-input">
-                            <input type="date" name="tgl_lahir_anak" value="<?php echo $row['tgl_lahir_anak']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <label>Waktu Kelahiran</label>
-                          <div class="form-group form-input">
-                            <input type="time" name="waktu_lahir" value="<?php echo $row['waktu_lahir']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>Nama Rumah Sakit</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="nama_rs" value="<?php echo $row['nama_rs']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label>Jenis Kelamin</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="alamat_rs" value="<?php echo $row['alamat_rs']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                      </div>
-
-                      <strong class="mb-8">Data Ayah</strong>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>Nik Ayah</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="nik_ayah" value="<?php echo $row['nik_ayah']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label>Nama Ayah</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="nama_ayah" value="<?php echo $row['nama_ayah']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>Tempat Lahir Ayah</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="tempat_lahir_ayah" value="<?php echo $row['tempat_lahir_ayah']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label>Tgl Lahir Ayah</label>
-                          <div class="form-group form-input">
-                            <input type="date" name="tgl_lahir_ayah" value="<?php echo $row['tgl_lahir_ayah']; ?>" class="form-control" readonly >
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>No Telp</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="no_telp" value="<?php echo $row['no_telp']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label>Email</label>
-                          <div class="form-group form-input">
-                            <input type="email" name="email" value="<?php echo $row['email']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>Pekerjaan Ayah</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="pekerjaan_ayah" value="<?php echo $row['pekerjaan_ayah']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label>Alamat Ayah</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="alamat_ayah" value="<?php echo $row['alamat_ayah']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                      </div>
-                      <strong class="mb-8">Data Ibu</strong>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>NIK Ibu</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="nik_ibu" value="<?php echo $row['nik_ibu']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label>Nama Ibu</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="nama_ibu" value="<?php echo $row['nama_ibu']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>Tempat Lahir Ibu</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="tempat_lahir_ibu" value="<?php echo $row['tempat_lahir_ibu']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label>Tgl Lahir Ibu</label>
-                          <div class="form-group form-input">
-                            <input type="date" name="tgl_lahir_ibu" value="<?php echo $row['tgl_lahir_ibu']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>Pekerjaan Ibu</label>
-                          <div class="form-group form-input">
-                            <input type="text" name="pekerjaan_ibu" value="<?php echo $row['pekerjaan_ibu']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <label>Alamat Ibu</label>
-                          <div class="form-group form-input">
-                            <input type="date" name="alamat_ibu" value="<?php echo $row['alamat_ibu']; ?>" class="form-control" readonly>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-                        <div class="col-md-3">
-                          <label>File KK</label>
-                          <div class="form-group form-input">
-                            <a href="<?php echo base_url() . "assets/upload/"; ?><?php echo $row['kk'];?>" target="_blank" class="btn btn-primary">File KK</a>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <label>File KTP Ayah</label>
-                          <div class="form-group form-input">
-                            <a href="<?php echo base_url() . "assets/upload/"; ?><?php echo $row['ktp_ayah'];?>" target="_blank" class="btn btn-primary">File KTP Ayah</a>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <label>File KTP Ibu</label>
-                          <div class="form-group form-input">
-                            <a href="<?php echo base_url() . "assets/upload/"; ?><?php echo $row['ktp_ibu'];?>" target="_blank" class="btn btn-primary">File KTP Ibu</a>
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <label>File Surat Keterangan Rumah Sakit</label>
-                          <div class="form-group form-input">
-                            <a href="<?php echo base_url() . "assets/upload/"; ?><?php echo $row['lampiran_surat'];?>" target="_blank" class="btn btn-primary">File Keterangan</a>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row">
-
-                        <div class="col-md-12">
-                          <label>Status</label>
-                          <div class="form-group form-input">
-                            <select class="form-control" name="status">
-                             <option value="<?php echo $status;?>">
-                              <?php 
-                              if ($status == '0') { ?>
-                                Masih Dalam Proses
-                              <?php }else if ($status == '1'){ ?>
-                                Di Setujui oleh admin
-                              <?php }else if ($status == '2'){  ?>
-                                Di Tolak
-                              <?php }else if ($status == '3'){ ?>
-                                Sudah Di setujui Oleh Lurah
-                              <?php } ?>
-                            </option>
-
-                            <?php
-                            $cek_akses = $this->session->userdata('hak_akses');
-                            if ($cek_akses == 'lurah') { ?>
-                              <option value="3">Proses Surat</option>
-                              <option value="2">Di Tolak</option>
-
-                            <?php }else{ ?>
-                             <option value="0">Masih Dalam Proses</option>
-                             <option value="1">Disetujui Oleh Admin</option>
-                             <option value="2">Ditolak</option>
-                           <?php } ?>
-                         </select>
+                           <input type="text" name="jenis_kelamin" value="<?php echo $jenis_kelamin;?>" class="form-control" readonly>
+                         </div>
                        </div>
                      </div>
-                   </div>
-                   <div class="row">
-                    <div class="col-md-12">
-                      <label>Keterangan</label>
-                      <div class="form-group form-input">
-                        <textarea class="form-control" name="keterangan" required=""><?php echo $keterangan;?></textarea>
+                     <div class="row">
+                      <div class="col-md-6">
+                        <label>Tempat Lahir</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="tempat_lahir_anak" value="<?php echo $row['tempat_lahir_anak']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Tanggal Lahir</label>
+                        <div class="form-group form-input">
+                          <input type="date" name="tgl_lahir_anak" value="<?php echo $row['tgl_lahir_anak']; ?>" class="form-control" readonly>
+                        </div>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <label>Waktu Kelahiran</label>
+                        <div class="form-group form-input">
+                          <input type="time" name="waktu_lahir" value="<?php echo $row['waktu_lahir']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>Nama Rumah Sakit</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="nama_rs" value="<?php echo $row['nama_rs']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Jenis Kelamin</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="alamat_rs" value="<?php echo $row['alamat_rs']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                    </div>
+
+                    <strong class="mb-8">Data Ayah</strong>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>Nik Ayah</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="nik_ayah" value="<?php echo $row['nik_ayah']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Nama Ayah</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="nama_ayah" value="<?php echo $row['nama_ayah']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>Tempat Lahir Ayah</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="tempat_lahir_ayah" value="<?php echo $row['tempat_lahir_ayah']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Tgl Lahir Ayah</label>
+                        <div class="form-group form-input">
+                          <input type="date" name="tgl_lahir_ayah" value="<?php echo $row['tgl_lahir_ayah']; ?>" class="form-control" readonly >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>No Telp</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="no_telp" value="<?php echo $row['no_telp']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Email</label>
+                        <div class="form-group form-input">
+                          <input type="email" name="email" value="<?php echo $row['email']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>Pekerjaan Ayah</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="pekerjaan_ayah" value="<?php echo $row['pekerjaan_ayah']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Alamat Ayah</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="alamat_ayah" value="<?php echo $row['alamat_ayah']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <strong class="mb-8">Data Ibu</strong>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>NIK Ibu</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="nik_ibu" value="<?php echo $row['nik_ibu']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Nama Ibu</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="nama_ibu" value="<?php echo $row['nama_ibu']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>Tempat Lahir Ibu</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="tempat_lahir_ibu" value="<?php echo $row['tempat_lahir_ibu']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Tgl Lahir Ibu</label>
+                        <div class="form-group form-input">
+                          <input type="date" name="tgl_lahir_ibu" value="<?php echo $row['tgl_lahir_ibu']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label>Pekerjaan Ibu</label>
+                        <div class="form-group form-input">
+                          <input type="text" name="pekerjaan_ibu" value="<?php echo $row['pekerjaan_ibu']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <label>Alamat Ibu</label>
+                        <div class="form-group form-input">
+                          <input type="date" name="alamat_ibu" value="<?php echo $row['alamat_ibu']; ?>" class="form-control" readonly>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-3">
+                        <label>File KK</label>
+                        <div class="form-group form-input">
+                          <a href="<?php echo base_url() . "assets/upload/"; ?><?php echo $row['kk'];?>" target="_blank" class="btn btn-primary">File KK</a>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <label>File KTP Ayah</label>
+                        <div class="form-group form-input">
+                          <a href="<?php echo base_url() . "assets/upload/"; ?><?php echo $row['ktp_ayah'];?>" target="_blank" class="btn btn-primary">File KTP Ayah</a>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <label>File KTP Ibu</label>
+                        <div class="form-group form-input">
+                          <a href="<?php echo base_url() . "assets/upload/"; ?><?php echo $row['ktp_ibu'];?>" target="_blank" class="btn btn-primary">File KTP Ibu</a>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <label>File Surat Keterangan Rumah Sakit</label>
+                        <div class="form-group form-input">
+                          <a href="<?php echo base_url() . "assets/upload/"; ?><?php echo $row['lampiran_surat'];?>" target="_blank" class="btn btn-primary">File Keterangan</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+
+                      <div class="col-md-12">
+                        <label>Status</label>
+                        <div class="form-group form-input">
+                          <select class="form-control" name="status">
+                           <option value="<?php echo $status;?>">
+                            <?php 
+                            if ($status == '0') { ?>
+                              Masih Dalam Proses
+                            <?php }else if ($status == '1'){ ?>
+                              Di Setujui oleh admin
+                            <?php }else if ($status == '2'){  ?>
+                              Di Tolak
+                            <?php }else if ($status == '3'){ ?>
+                              Sudah Di setujui Oleh Lurah
+                            <?php } ?>
+                          </option>
+
+                          <?php
+                          $cek_akses = $this->session->userdata('hak_akses');
+                          if ($cek_akses == 'lurah') { ?>
+                            <option value="3">Di setujui Oleh Lurah</option>
+                            <option value="2">Di Tolak</option>
+
+                          <?php }else{ ?>
+                           <option value="0">Masih Dalam Proses</option>
+                           <option value="1">Disetujui Oleh Admin</option>
+                           <option value="2">Ditolak</option>
+                         <?php } ?>
+                       </select>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="row">
+                  <div class="col-md-12">
+                    <label>Keterangan</label>
+                    <div class="form-group form-input">
+                      <textarea class="form-control" name="keterangan" required=""><?php echo $keterangan;?></textarea>
+                    </div>
                   </div>
+                </div>
              <!--        <div class="row">
                       <div class="col-md-6">
                         <label>File Surat</label>

@@ -408,7 +408,7 @@ public function add()
                 $cek_status = 'Sudah Disetujui oleh Lurah';
             }
 
-            if ($cek_status == '3') {
+            if ($status == '3') {
                $mail->isSMTP();      
 
             $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
@@ -429,7 +429,7 @@ public function add()
             <H1>Notifikasi Kelurahan Karang Timur</h1>
             <br>
             <p>Salam Sejahtera,</p>
-            <h3>Terima Kasih, <strong>'.$nama.'</strong></h3> <p> sudah melakukan <strong>Permohonan Surat Kelahiran</strong>.</p><p> Permohonan Surat Kelahiran dengan nomor : <strong>' .$kode_permohonan. ' </strong>, Saat ini : <strong> '.$cek_status.' </strong> , Mohon untuk datang Ke Kelurahan Karang Timur Setelah 2 -3 Hari Setelah Menerima email ini.<br>Keterangan lebih lanjut sebagai berikut : ' .$pesan. '</p> 
+            <h3>Terima Kasih, <strong>'.$nama.'</strong></h3> <p> sudah melakukan <strong>Permohonan Surat Kelahiran</strong>.</p><p> Permohonan Surat Kelahiran dengan nomor : <strong>' .$kode_permohonan. ' </strong>, Saat ini : <strong> '.$cek_status.' </strong> , Mohon untuk datang Ke Kelurahan Karang Timur Setelah 2 -3 Hari Setelah Menerima email ini untuk mengambil dokumen tersebut.</p> 
             <br>
             <p>Terimakasih atas perhatiannya</p>
             <p>Hormat Kami</p>

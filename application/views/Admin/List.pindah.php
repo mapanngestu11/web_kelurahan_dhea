@@ -394,7 +394,7 @@
                             <?php
                             $cek_akses = $this->session->userdata('hak_akses');
                             if ($cek_akses == 'lurah') { ?>
-                              <option value="3">Proses Surat</option>
+                              <option value="3">Di setujui Oleh Lurah</option>
                               <option value="2">Di Tolak</option>
 
                             <?php }else{ ?>

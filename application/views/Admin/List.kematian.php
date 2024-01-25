@@ -329,11 +329,7 @@
                       <div class="col-md-4">
                         <label>Jenis Kelamin</label>
                         <div class="form-group form-input">
-                          <select class="form-control" name="jenis_kelamin" readonly>
-                            <option value="<?php echo $jenis_kelamin;?>"> <?php echo $jenis_kelamin;?></option>
-                            <option value="Laki-Laki">Laki-Laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                          </select>
+                          <input type="text" name="jenis_kelamin" value="<?php echo $jenis_kelamin;?>" class="form-control" readonly>
                         </div>
                       </div>
                     </div>
@@ -341,13 +337,13 @@
                       <div class="col-md-6">
                         <label>Tgl Lahir</label>
                         <div class="form-group form-input" readonly>
-                          <input type="date" name="tgl_lahir" value="<?php echo $row['tgl_lahir']; ?>" class="form-control">
+                          <input type="date" name="tgl_lahir" value="<?php echo $row['tgl_lahir']; ?>" class="form-control" readonly>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <label>Tgl Kematian</label>
                         <div class="form-group form-input" readonly>
-                          <input type="date" name="tgl_kematian" value="<?php echo $row['tgl_kematian']; ?>" class="form-control">
+                          <input type="date" name="tgl_kematian" value="<?php echo $row['tgl_kematian']; ?>" class="form-control" readonly>
                         </div>
                       </div>
                     </div>
@@ -438,7 +434,7 @@
                           <?php
                           $cek_akses = $this->session->userdata('hak_akses');
                           if ($cek_akses == 'lurah') { ?>
-                            <option value="3">Proses Surat</option>
+                            <option value="3">Di setujui Oleh Lurah</option>
                             <option value="2">Di Tolak</option>
 
                           <?php }else{ ?>
